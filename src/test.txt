@@ -1,0 +1,27 @@
+if (!value.name) {
+      errors = { ...errors, isTrue: false, name: "name is requied" };
+    } else if (value.name.length < 5) {
+      errors = { ...errors, isTrue: false, name: "name is min length 5" };
+    } else {
+      errors = { ...errors, isTrue: true, name: "" };
+    }
+    if (!value.email) {
+      errors = { ...errors, isTrue: false, email: "email is requied" };
+    } else if (patern.test(value.email)) {
+      errors = { ...errors, isTrue: false, email: "email is not format!" };
+    } else {
+      errors = { ...errors, isTrue: true, email: "" };
+    }
+    if (!value.password) {
+      errors = { ...errors, isTrue: false, password: "password is requied" };
+    } else if (value.password.length < 8) {
+      errors = { ...errors, isTrue: false, password: "password need 8 leters" };
+    } else {
+      errors = { ...errors, isTrue: true, password: "" };
+    }
+
+    if (errors.isTrue) {
+      return true;
+    } else {
+      return errors;
+    }
